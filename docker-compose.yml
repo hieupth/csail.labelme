@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  labelme:
+    image: hieupth/csail.labelme:latest
+    container_name: labelme
+    restart: unless-stopped
+    ports:
+      - 8008:80
+    volumes:
+      - ./data/images:/var/www/html/LabelMeAnnotationTool/Images
+      - ./data/annotations:/var/www/html/LabelMeAnnotationTool/Annotations
